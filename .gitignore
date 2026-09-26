@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Datasets
+datasets/raw/
+datasets/processed/
+
+# Training outputs
+runs/
+*.pt
+*.pth
+*.onnx
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
