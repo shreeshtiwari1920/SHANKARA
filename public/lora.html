@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LoRa Text — SAR Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app-shell"></div>
+<div class="content">
+  <div class="page">
+    <div class="card">
+      <div class="card-header"><span class="label">Raw LoRa Mesh Log (always-on fallback channel)</span></div>
+      <div class="card-body" style="padding:0;">
+        <table>
+          <thead><tr><th>Time</th><th>Drone</th><th>Type</th><th>Coordinates</th><th>Message</th></tr></thead>
+          <tbody id="lora-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/api.js"></script>
+<script src="/js/shell.js"></script>
+<script src="/js/lora.js"></script>
+</body>
+</html>

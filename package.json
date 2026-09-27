@@ -1,0 +1,22 @@
+{
+  "name": "sar-drone-dashboard",
+  "version": "1.0.0",
+  "description": "SAR autonomous drone mission control - backend + dashboard",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "simulate": "node scripts/simulate_drones.js",
+    "gen-dataset": "node scripts/generate_dataset.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^9.0.1",
+    "ws": "^8.18.0"
+  }
+}

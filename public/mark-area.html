@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mark Search Area — SAR Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app-shell"></div>
+<div class="content">
+  <div class="page" style="display:grid;grid-template-columns:1fr 300px;gap:12px;align-items:start;">
+    <div class="card">
+      <div class="card-header"><span class="label">Draw search polygon on the map, then set parameters →</span></div>
+      <div class="card-body" style="padding:0;">
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><span class="label">Mission Parameters</span></div>
+      <div class="card-body">
+        <div class="field">
+          <label class="field-label">Mission Name</label>
+          <input id="mission-name-input" placeholder="Sector 4 Search"/>
+        </div>
+        <div class="field">
+          <label class="field-label">Number of Drones</label>
+          <input id="num-drones" type="number" min="1" max="8" value="3"/>
+        </div>
+        <div class="field">
+          <label class="field-label">Altitude (m)</label>
+          <input id="altitude" type="number" min="10" max="400" value="60"/>
+        </div>
+        <div class="field">
+          <label class="field-label">Image Overlap (%)</label>
+          <input id="overlap" type="number" min="0" max="90" value="20"/>
+        </div>
+        <div class="field">
+          <label class="field-label">Terrain</label>
+          <select id="terrain">
+            <option value="open">Open</option>
+            <option value="urban">Urban</option>
+            <option value="forest">Forest</option>
+            <option value="mountain">Mountain</option>
+          </select>
+        </div>
+        <button class="btn primary" style="width:100%;margin-bottom:8px;" id="generate-btn" disabled>Generate Route</button>
+        <button class="btn" style="width:100%;margin-bottom:8px;" id="clear-btn">Clear Polygon</button>
+        <button class="btn danger" style="width:100%;" id="deploy-btn" disabled>Deploy Drones</button>
+        <div class="label" id="status-text" style="margin-top:10px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/shell.js"></script>
+<script src="/js/mark-area.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Images — SAR Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app-shell"></div>
+<div class="content">
+  <div class="page">
+    <div class="card">
+      <div class="card-header" style="gap:10px;">
+        <span class="label">Filters</span>
+        <select id="drone-filter" style="width:auto;"><option value="">All Drones</option></select>
+        <select id="kind-filter" style="width:auto;">
+          <option value="">Color + Thermal</option>
+          <option value="color">Color only</option>
+          <option value="thermal">Thermal only</option>
+        </select>
+      </div>
+      <div class="card-body">
+        <div class="gallery" id="gallery"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/api.js"></script>
+<script src="/js/shell.js"></script>
+<script src="/js/images.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/sar.db
+data/sar.db-wal
+data/sar.db-shm
+data/db.json
+server.log
+server.pid
+package-lock.json

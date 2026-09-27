@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home — SAR Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+<style>#route-map{height:220px;width:100%;}</style>
+</head>
+<body>
+<div id="app-shell"></div>
+<div class="content">
+  <div class="page">
+
+    <div class="grid-home">
+      <!-- LEFT: Safe route mini-map -->
+      <div class="card">
+        <div class="card-header"><span class="label">Safe Route & Ingress</span><span class="badge badge-green" id="route-badge">On Track</span></div>
+        <div class="card-body" style="padding:0;">
+          <div id="route-map"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px;">
+            <div class="tel-tile"><div class="label">Altitude</div><div class="val" id="tel-alt">—</div></div>
+            <div class="tel-tile"><div class="label">Heading</div><div class="val" id="tel-heading">—</div></div>
+            <div class="tel-tile"><div class="label">Speed</div><div class="val" id="tel-speed">—</div></div>
+            <div class="tel-tile"><div class="label">Battery</div><div class="val" id="tel-battery">—</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CENTER: Live feed -->
+      <div class="card">
+        <div class="card-header">
+          <span class="label" id="feed-title">Live Feed — —</span>
+          <span class="badge badge-amber">Latest frame, not continuous video — see README</span>
+        </div>
+        <div class="card-body" style="padding:0;">
+          <div class="feed-box" id="feed-box">
+            <div class="label" style="color:var(--text-dim)">Waiting for frames…</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: color + thermal stills -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="card">
+          <div class="card-header"><span class="label">Color Image (Real-Time)</span></div>
+          <div class="card-body" style="padding:0;">
+            <div class="feed-box" style="aspect-ratio:4/3;" id="color-box"></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="label">Thermal Image</span></div>
+          <div class="card-body" style="padding:0;">
+            <div class="feed-box" style="aspect-ratio:4/3;" id="thermal-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LoRa divider ticker -->
+    <a href="/lora.html" class="lora-ticker" id="lora-ticker">
+      <span class="label" style="color:var(--red)">LORA ▸</span>
+      <span>waiting for messages…</span>
+    </a>
+
+    <!-- Bottom: thumbnails of other drones -->
+    <div>
+      <div class="label" style="margin-bottom:6px;">Other Active Drones</div>
+      <div class="thumb-row" id="thumb-row"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/shell.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>

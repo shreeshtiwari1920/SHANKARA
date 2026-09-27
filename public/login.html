@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SAR Mission Control — Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>🛰 SAR MISSION CONTROL</h1>
+      <div class="field">
+        <label class="field-label">Rescue Team Username</label>
+        <input id="username" autocomplete="username" placeholder="rescueteam"/>
+      </div>
+      <div class="field">
+        <label class="field-label">Password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="••••••••"/>
+      </div>
+      <button class="btn primary" id="login-btn" style="width:100%">Sign In</button>
+      <div class="error-text" id="error"></div>
+      <div class="label" style="margin-top:16px;text-align:center;">One shared login for the whole field team</div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script>
+    document.getElementById("login-btn").onclick = async () => {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const errEl = document.getElementById("error");
+      errEl.textContent = "";
+      try {
+        await API.login(username, password);
+        window.location.href = "/index.html";
+      } catch (e) {
+        errEl.textContent = e.message || "Login failed";
+      }
+    };
+    document.getElementById("password").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("login-btn").click();
+    });
+  </script>
+</body>
+</html>

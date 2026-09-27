@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Live Feed — SAR Mission Control</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="app-shell"></div>
+<div class="content">
+  <div class="page">
+    <div class="thumb-row" id="drone-tabs" style="flex-wrap:wrap;"></div>
+    <div class="card">
+      <div class="card-header">
+        <span class="label" id="feed-title">Live Feed</span>
+        <span class="badge badge-amber">Latest frame, not continuous video — see README</span>
+      </div>
+      <div class="card-body" style="padding:0;">
+        <div class="feed-box" style="aspect-ratio:16/9;" id="feed-box">
+          <div class="label" style="color:var(--text-dim)">Select a drone</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="label">Manual Override</span></div>
+      <div class="card-body" style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="label">Interrupts autonomous flight for this drone. Wire this button to your companion-computer's RC/override command endpoint (see interfaces.md).</div>
+        <button class="btn danger" id="override-btn">Take Manual Control</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/api.js"></script>
+<script src="/js/shell.js"></script>
+<script src="/js/live-feed.js"></script>
+</body>
+</html>
