@@ -272,3 +272,16 @@ RescueNet provides high-resolution post-disaster UAV imagery and pixel-level sem
 
 * [FloodNet dataset](https://datasetninja.com/floodnet)
 * [FloodNet dataset repository](https://github.c)
+
+### RGBTDronePerson
+
+[RGBTDronePerson](https://nnnnerd.github.io/RGBTDronePerson/) is a paired RGB-thermal UAV person-detection dataset designed for detecting people from aerial imagery.
+
+- **Images:** 6,125 RGB + thermal image pairs
+- **Annotated instances:** 70,880
+- **Use case:** RGB/thermal person detection for UAV-based search and rescue
+- **Annotation format:** XML/YOLO-compatible annotations
+- **Dataset:** [RGBTDronePerson](https://nnnnerd.github.io/RGBTDronePerson/)
+- **Repository:** [GitHub](https://github.com/NNNNerd/RGBTDronePerson)
+
+The dataset was evaluated as a potential source for the person-detection stage of this project. The current prototype does not use RGBTDronePerson for training because RGB/thermal image and annotation alignment requires further validation. It is retained as a research direction for future RGB-thermal fusion experiments.
